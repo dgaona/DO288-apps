@@ -7,9 +7,9 @@ ini_set('display_errors',0);
  
 if( isset( $_REQUEST['calculate'] ))
 {
-	$operator=$_REQUEST['operator'];
-	$n1 = $_REQUEST['first_value'];
-	$n2 = $_REQUEST['second_value'];
+	$operator=$_REQUEST['Dame el Operador'];
+	$n1 = $_REQUEST['Ingresa el primer valor'];
+	$n2 = $_REQUEST['Ingresa el segundo valor'];
 	 
 	if($operator=="+")
 	{
