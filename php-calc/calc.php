@@ -45,7 +45,7 @@ if( isset( $_REQUEST['calculate'] ))
 </tr>
  
 <tr>
-<td style="color:red; font-family:'Times New Roman'">Select Operator</td>
+<td style="color:red; font-family:'Times New Roman'">Cual es el Operator</td>
 <td>
 <select name="operator" style="width: 63px">
 <option>+</option>
