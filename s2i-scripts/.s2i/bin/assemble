@@ -7,13 +7,22 @@ source ${HTTPD_CONTAINER_SCRIPTS_PATH}/common.sh
 echo "---> Enabling s2i support in httpd24 image"
 
 config_s2i
+
 echo "---> Installing application source"
 cp -Rf /tmp/src/. ./
 
-DATE=`date "+%b %d, %Y @ %H:%M %p"`
-echo "---> Creating info page"
+########## CUSTOMiZATION STARTS HERE #############
+
+
+echo "---> Installing application source."
+DATE=`date "+%b %d, %Y @ %H:%M %p"` 
+
+echo "----> Creating info page"
 echo "Page built on $DATE" >> ./info.html
-echo "Traido a ustedes por nuestro amable patrociandor de siempre DAGM" >> ./info.html
+echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
+
+
+##################################################
 
 # Fix source directory permissions
 fix-permissions ./
