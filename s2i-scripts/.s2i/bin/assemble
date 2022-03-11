@@ -16,7 +16,7 @@ cp -Rf /tmp/src/. ./
 
 echo "---> Installing application source."
 DATE=`date "+%b %d, %Y @ %H:%M %p"` 
-TEXTO="Texto en latin: $(date +%F)"
+TEXTO="Texto en latin: $(date +%F)   Directorio actual:$(pwd)     Hostname:$(hostname) \n"
 echo $TEXTO >> ./info.html
 
 echo "----> Creating info page"
