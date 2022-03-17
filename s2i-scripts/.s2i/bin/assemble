@@ -18,7 +18,7 @@ echo "---> Installing application source."
 DATE=`date "+%b %d, %Y @ %H:%M %p"` 
 TEXTO="Texto en latin: $(date +%F)   Directorio actual:$(pwd)     Hostname:$(hostname) \n"
 echo $TEXTO >> ./info.html
-
+echo "La variable HOME vale: $HOME" >> ./info.html
 echo "----> Creating info page"
 echo "Page built on $DATE" >> ./info.html
 echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
