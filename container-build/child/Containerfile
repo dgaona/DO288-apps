@@ -1,0 +1,11 @@
+FROM default-route-openshift-image-registry.apps.na46.prod.nextcle.com/david-common/httpd-parent
+
+ENV PATHS="/var/log/httpd /var/run/httpd"
+
+EXPOSE 8080
+
+RUN sed -i "s/Listen 80/Listen 8080/g" /etc/httpd/conf/httpd.conf && \
+    chgrp -R 0 ${PATHS} && \
+    chmod -R g=u ${PATHS}
+
+USER 1001
