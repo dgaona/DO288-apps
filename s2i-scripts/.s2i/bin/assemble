@@ -15,7 +15,7 @@ cp -af /tmp/src/. ./
 echo " Starting D A G M customization. $HOME"
 echo " Este es un mensaje desde el proceso de s2i con fecha: $(date +%F)" >> $HOME/info.html
 
-cp -af /tmp/src/.html /var/www/html
+cp -af /tmp/src/*.html /var/www/html
 
 
 ######### CUSTOMIZATION ENDS HERE ##############
