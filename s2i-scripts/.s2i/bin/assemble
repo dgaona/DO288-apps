@@ -9,25 +9,16 @@ echo "---> Enabling s2i support in httpd24 image"
 config_s2i
 
 echo "---> Installing application source"
-cp -af /tmp/src/*.html ./
+cp -af /tmp/src/. ./
 
-########## CUSTOMiZATION STARTS HERE #############
+######### CUSTOMIZATION STARTS HERE ##############
+echo " Starting D A G M customization. $HOME"
+echo " Este es un mensaje desde el proceso de s2i con fecha: $(date +%F)" >> $HOME/info.html
+
+cp -af /tmp/src/.html /var/www/html
 
 
-echo "---> Installing application source."
-DATE=`date "+%b %d, %Y @ %H:%M %p"` 
-TEXTO="Texto en latin: $(date +%F)   Directorio actual:$(pwd)     Hostname:$(hostname) \n"
-echo $TEXTO >> $HOME/info.html
-echo "La variable HOME vale: $HOME" >> $HOME/info.html
-echo "----> Creating info page"
-echo "Page built on $DATE" >> $HOME/info.html
-echo "Proudly served by Apache HTTP Server version $HTTPD_VERSION" >> ./info.html
-
-cp ./*.html /var/www/html/
-
-env 
-
-##################################################
+######### CUSTOMIZATION ENDS HERE ##############
 
 # Fix source directory permissions
 fix-permissions ./
